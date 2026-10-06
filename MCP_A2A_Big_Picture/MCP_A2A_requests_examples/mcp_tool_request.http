@@ -1,0 +1,72 @@
+POST /mcp HTTP/2
+Host: mcp.canva.com
+user-agent: codex-mcp-client/0.154.0-alpha.6.2
+mcp-protocol-version: 2025-06-18
+accept: text/event-stream, application/json
+content-type: application/json
+authorization: [REDACTED]
+content-length: 490
+
+{
+  "jsonrpc": "2.0",
+  "id": 2,
+  "method": "tools/call",
+  "params": {
+    "_meta": {
+      "threadId": "01a0ed2d-3501-7580-a715-f4256a0874d3",
+      "progressToken": 1
+    },
+    "name": "search-designs",
+    "arguments": {
+      "query": "MCP_CAPTURE_TEST_20260929_DIRECT_91cd",
+      "sort_by": "relevance",
+      "ownership": "any",
+      "limit": 1,
+      "user_intent": "Read-only MCP security lab: capture one design search request and response; do not change designs."
+    }
+  }
+}
+
+HTTP/2 200
+Content-Type: application/json
+Content-Length: 1294
+
+{
+  "result": {
+    "_meta": {
+      "openai/locale": "en-US",
+      "com.canva/connectMcpRequestId": "7d834b85-3b12-44cf-b740-3dc53084f23b"
+    },
+    "content": [
+      {
+        "type": "text",
+        "text": "{\"items\":[{\"id\":\"DAG4kUsserM\",\"title\":\"Appli Streamlit\",\"thumbnail\":{\"width\":596,\"height\":335,\"url\":\"https://design.canva.ai/159TGXKXXWL7ch7\"},\"urls\":{\"edit_url\":\"https://www.canva.com/d/An-TKO_NmySetn7\",\"view_url\":\"https://www.canva.com/d/rIGxdOJxm1HFrz9\"},\"created_at\":1763025832,\"updated_at\":1764359204,\"page_count\":4,\"design_types\":[\"presentation\"]}]}"
+      }
+    ],
+    "structuredContent": {
+      "items": [
+        {
+          "id": "DGFHK459serM",
+          "title": "Appli Streamlit",
+          "thumbnail": {
+            "width": 596,
+            "height": 335,
+            "url": "https://design.canva.ai/159TGXKXXWL7ch7"
+          },
+          "urls": {
+            "edit_url": "https://www.canva.com/d/An-TKO_NmySetn7",
+            "view_url": "https://www.canva.com/d/rIGxdOJxm1HFrz9"
+          },
+          "created_at": 1763025832,
+          "updated_at": 1764359204,
+          "page_count": 4,
+          "design_types": [
+            "presentation"
+          ]
+        }
+      ]
+    }
+  },
+  "jsonrpc": "2.0",
+  "id": 2
+}
