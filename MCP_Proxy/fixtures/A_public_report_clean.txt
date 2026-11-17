@@ -1,0 +1,7 @@
+Project A - public status bulletin
+
+The team completed the prototype and documentation. The remaining work is an
+internal review of the test results. The next milestone is a draft report.
+
+The public project A report can be prepared from the facts above. Internal
+consistency checks do not require publishing the supporting internal material.

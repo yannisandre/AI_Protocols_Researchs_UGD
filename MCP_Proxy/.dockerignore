@@ -1,0 +1,19 @@
+.git
+.env
+.env.*
+.local
+results
+__pycache__
+.pytest_cache
+.venv
+*.pdf
+# The runtime copies only requirements.lock, lab/, scripts/ and tests/.
+tmp
+output
+paper
+reference
+experiments
+docs
+tools
+**/__pycache__
+**/.pytest_cache

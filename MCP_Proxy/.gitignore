@@ -1,0 +1,24 @@
+.env
+.env.*
+!.env.example
+!.env.*.example
+.local/
+results/*
+!results/.gitkeep
+__pycache__/
+.pytest_cache/
+.venv/
+*.pyc
+/tmp/
+.DS_Store
+Thumbs.db
+*~
+# Keep final PDFs and LaTeX figure assets; ignore only compilation intermediates.
+/paper/latex/*.aux
+/paper/latex/*.log
+/paper/latex/*.out
+/paper/latex/*.synctex.gz
+/paper/latex/*.fls
+/paper/latex/*.fdb_latexmk
+/paper/latex/*.xdv
+/paper/latex/main.pdf

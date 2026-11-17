@@ -1,0 +1,95 @@
+name: mcp-proxy-s1
+
+x-service: &service
+  image: mcp-proxy-s1:0.1.0
+  build: .
+  user: "${LAB_UID:-1000}:${LAB_GID:-1000}"
+  init: true
+  read_only: true
+  cap_drop: [ALL]
+  security_opt: [no-new-privileges:true]
+  pids_limit: 64
+  tmpfs: [/tmp:size=16777216]
+
+x-health: &health
+  test: [CMD, python, -c, "import httpx; r=httpx.get('https://localhost:8443/health',verify='/certs/ca.pem',trust_env=False); r.raise_for_status()"]
+  interval: 10s
+  timeout: 5s
+  retries: 10
+  start_period: 5s
+
+services:
+  collector:
+    <<: *service
+    command: [python, -m, uvicorn, lab.collector:app, --host, 0.0.0.0, --port, '8443', --ssl-certfile, /certs/cert.pem, --ssl-keyfile, /certs/key.pem, --no-access-log]
+    mem_limit: 128m
+    networks: [sink]
+    volumes:
+      - ./.local/collector-tls:/certs:ro
+      - ./.local/collector-secrets:/secrets:ro
+      - ./.local/collector-data:/data
+    healthcheck: *health
+  mcp-server:
+    <<: *service
+    command: [python, -m, uvicorn, lab.server:app, --host, 0.0.0.0, --port, '8443', --ssl-certfile, /certs/cert.pem, --ssl-keyfile, /certs/key.pem, --no-access-log]
+    mem_limit: 256m
+    networks: [backend, sink]
+    volumes:
+      - ./fixtures:/fixtures:ro
+      - ./.local/mcp-server-tls:/certs:ro
+      - ./.local/mcp-server-secrets:/secrets:ro
+      - ./.local/mcp-server-data:/data
+    healthcheck: *health
+    depends_on:
+      collector: {condition: service_healthy}
+  proxy:
+    <<: *service
+    command: [python, -m, uvicorn, lab.proxy:app, --host, 0.0.0.0, --port, '8443', --ssl-certfile, /certs/cert.pem, --ssl-keyfile, /certs/key.pem, --no-access-log]
+    mem_limit: 320m
+    networks: [frontend, backend, sink, provider-egress]
+    volumes:
+      - ./.local/proxy-tls:/certs:ro
+      - ./.local/proxy-secrets:/secrets:ro
+      - ./.local/proxy-data:/data
+    environment:
+      LLM_PROVIDER: "${LLM_PROVIDER:-openai}"
+      LLM_API_KEY: "${LLM_API_KEY:-}"
+      LLM_BASE_URL: "${LLM_BASE_URL:-https://api.openai.com/v1}"
+      LLM_MODEL: "${LLM_MODEL:-}"
+      LLM_MAX_COMPLETION_TOKENS: "${LLM_MAX_COMPLETION_TOKENS:-1500}"
+      LLM_MAX_REQUESTS: "${LLM_MAX_REQUESTS:-8}"
+      ANTHROPIC_VERSION: "${ANTHROPIC_VERSION:-2026-10-21}"
+      GUARD_PROVIDER: "${GUARD_PROVIDER:-}"
+      GUARD_BASE_URL: "${GUARD_BASE_URL:-}"
+      GUARD_MODEL: "${GUARD_MODEL:-}"
+      GUARD_API_KEY: "${GUARD_API_KEY:-}"
+      GUARD_MAX_COMPLETION_TOKENS: "${GUARD_MAX_COMPLETION_TOKENS:-256}"
+      GUARD_MAX_REQUESTS: "${GUARD_MAX_REQUESTS:-4}"
+      GUARD_ANTHROPIC_VERSION: "${GUARD_ANTHROPIC_VERSION:-${ANTHROPIC_VERSION:-2026-10-21}}"
+    healthcheck: *health
+    depends_on:
+      mcp-server: {condition: service_healthy}
+  agent:
+    <<: *service
+    profiles: [run]
+    command: [python, -m, lab.agent]
+    mem_limit: 384m
+    networks: [frontend]
+    volumes:
+      - ./.local/ca.pem:/certs/ca.pem:ro
+      - ./.local/agent-secrets:/secrets:ro
+      - ./results:/results
+    depends_on:
+      proxy: {condition: service_healthy}
+  tests:
+    <<: *service
+    profiles: [test]
+    command: [python, -m, pytest, -q, -p, no:cacheprovider, tests]
+    mem_limit: 256m
+    network_mode: none
+
+networks:
+  frontend: {internal: true}
+  backend: {internal: true}
+  sink: {internal: true}
+  provider-egress: {}

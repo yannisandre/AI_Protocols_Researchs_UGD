@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="503" height="247" preserveAspectRatio="xMinYMin meet" viewBox="0 0 503 247" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Evaluation design</title>
+	<desc>Vector figure for the MCP proxy manuscript.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="503" height="247"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-247)" style="clip-path: url(#clip)">
+		<g transform="">
+			<text x="0" y="235" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 8px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,470) scale(1,-1)">FIVE FIXED CASES</text>
+			<rect x="0" y="153" width="95" height="67" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="10" y="203" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 7.3px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,406) scale(1,-1)">Public</text>
+			<text x="10" y="188" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.3px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,376) scale(1,-1)">Plain summary</text>
+			<text x="10" y="177" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.3px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,354) scale(1,-1)">No injection</text>
+			<rect x="102" y="153" width="95" height="67" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="112" y="203" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 7.3px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,406) scale(1,-1)">Public metadata</text>
+			<text x="112" y="188" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.3px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,376) scale(1,-1)">Benign fields</text>
+			<text x="112" y="177" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.3px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,354) scale(1,-1)">No injection</text>
+			<rect x="204" y="153" width="95" height="67" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(100%,95%,90%); fill-rule: evenodd;"/>
+			<text x="214" y="203" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 7.3px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,406) scale(1,-1)">Receipt injection</text>
+			<text x="214" y="188" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.3px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,376) scale(1,-1)">Private identifier</text>
+			<text x="214" y="177" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.3px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,354) scale(1,-1)">+ budget</text>
+			<rect x="306" y="153" width="95" height="67" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(100%,95%,90%); fill-rule: evenodd;"/>
+			<text x="316" y="203" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 7.3px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,406) scale(1,-1)">Reviewer injection</text>
+			<text x="316" y="188" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.3px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,376) scale(1,-1)">Private budget</text>
+			<text x="316" y="177" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.3px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,354) scale(1,-1)">in English words</text>
+			<rect x="408" y="153" width="95" height="67" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(92%,96%,94%); fill-rule: evenodd;"/>
+			<text x="418" y="203" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 7.3px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,406) scale(1,-1)">Authorized export</text>
+			<text x="418" y="188" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.3px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,376) scale(1,-1)">Full B export</text>
+			<text x="418" y="177" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.3px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,354) scale(1,-1)">Explicit permission</text>
+			<path d="M 47.5,153 L 47.5,143 Z" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 149.5,153 L 149.5,143 Z" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 251.5,153 L 251.5,143 Z" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 353.5,153 L 353.5,143 Z" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 455.5,153 L 455.5,143 Z" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 47.5,143 L 455.5,143 Z" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.8;"/>
+			<path d="M 251.5,143 L 251.5,132 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95;"/>
+			<polygon points="251.5 132, 249.2 137, 253.8 137" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(8%,20%,30%); fill-rule: evenodd;"/>
+			<rect x="0" y="67" width="303" height="65" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="10" y="115" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 9px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,230) scale(1,-1)">90 main runs / bounded recovery enabled</text>
+			<text x="10" y="100" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,200) scale(1,-1)">5 cases x 2 actor models x 3 guards x 3 repetitions</text>
+			<text x="10" y="89" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,178) scale(1,-1)">Guards: Resource, DLP, Hybrid</text>
+			<rect x="320" y="67" width="183" height="65" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(100%,95%,90%); fill-rule: evenodd;"/>
+			<text x="330" y="115" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 8.5px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,230) scale(1,-1)">6 no-recovery controls</text>
+			<text x="330" y="100" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,200) scale(1,-1)">Receipt injection + DLP only</text>
+			<text x="330" y="89" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,178) scale(1,-1)">2 models x 3 repetitions</text>
+			<path d="M 151,67 L 151,53 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95;"/>
+			<path d="M 151,53 L 251.5,53 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95;"/>
+			<path d="M 251.5,53 L 251.5,42 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95;"/>
+			<polygon points="251.5 42, 249.2 47, 253.8 47" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(8%,20%,30%); fill-rule: evenodd;"/>
+			<path d="M 411,67 L 411,53 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95;"/>
+			<path d="M 411,53 L 251.5,53 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95;"/>
+			<polygon points="251.5 53, 256.5 55.3, 256.5 50.7" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(8%,20%,30%); fill-rule: evenodd;"/>
+			<rect x="116" y="0" width="271" height="42" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(92%,96%,94%); fill-rule: evenodd;"/>
+			<text x="126" y="25" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 8.8px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,50) scale(1,-1)">96 runs / effects checked independently</text>
+			<text x="126" y="10" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,20) scale(1,-1)">Server events + actual collector receipts</text>
+		</g>
+	</g>
+</svg>

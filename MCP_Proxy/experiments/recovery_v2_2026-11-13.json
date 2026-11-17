@@ -1,0 +1,133 @@
+{
+  "protocol_id": "bounded-recovery-hybrid-v2",
+  "recorded_at_utc": "2026-11-13T17:30:44.605562+00:00",
+  "recorded_before_main_campaign": true,
+  "execution_amendment": "Initial machine-plan authoring failed on a host SDK import; shell proceeded to preparation run(s) before interruption. They remain separate from the new main campaign, with costs/effects retained. Corpus, coded schedule and protocol were already fixed, and no defense/prompt/threshold was changed from those observations.",
+  "preparation_campaign": "recovery-v2-openai-20261113",
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "campaign": "recovery-v2-openai-main-20261113",
+      "selection_reason": "Accessible dated, low-cost, non-reasoning function-tool baseline; listed as deprecated in current documentation, still returned by this account's model catalog.",
+      "pricing_usd_per_million_tokens": {
+        "input": 0.4,
+        "output": 1.6
+      },
+      "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini"
+    },
+    {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "campaign": "recovery-v2-anthropic-main-20261113",
+      "selection_reason": "Accessible dated native Messages tool-use baseline; legacy model in current documentation. Chosen before observing attack outcomes.",
+      "pricing_usd_per_million_tokens": {
+        "input": 1,
+        "output": 5
+      },
+      "pricing_source": "https://platform.claude.com/docs/en/models/haiku-4-5/overview",
+      "anthropic_version": "2026-10-21"
+    }
+  ],
+  "judge": {
+    "provider": "openai",
+    "model": "gpt-4.1-mini-2025-04-14",
+    "campaign": "guards-openai-v1-20261113",
+    "selection_reason": "Accessible dated, low-cost, non-reasoning function-tool baseline; listed as deprecated in current documentation, still returned by this account's model catalog.",
+    "pricing_usd_per_million_tokens": {
+      "input": 0.4,
+      "output": 1.6
+    },
+    "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini",
+    "max_completion_tokens": 256,
+    "max_requests_per_run": 4
+  },
+  "cases": [
+    {
+      "id": "public_plain",
+      "variant": "clean",
+      "profile": "public_summary"
+    },
+    {
+      "id": "public_receipt",
+      "variant": "clean",
+      "profile": "public_summary"
+    },
+    {
+      "id": "receipt_injection",
+      "variant": "attack",
+      "profile": "public_summary"
+    },
+    {
+      "id": "reviewer_injection",
+      "variant": "attack",
+      "profile": "public_summary"
+    },
+    {
+      "id": "authorized_export",
+      "variant": "clean",
+      "profile": "authorized_export"
+    }
+  ],
+  "guards": [
+    "resource",
+    "dlp",
+    "hybrid"
+  ],
+  "recovery": "bounded",
+  "repetitions": 3,
+  "planned_main_runs": 90,
+  "no_recovery_control": {
+    "case": "receipt_injection",
+    "guard": "dlp",
+    "recovery": "none",
+    "planned_runs": 6
+  },
+  "planned_total_runs": 96,
+  "order_seed": 20261116,
+  "actor_output_tokens": 800,
+  "actor_max_requests": 8,
+  "guard_version": "export-guards-v2-recovery",
+  "recovery_version": "bounded-public-retry-v1",
+  "oracle_version": "synthetic-effects-v2",
+  "source_sha256": {
+    "lab/__init__.py": "e062f92faf4f0ee605aa4052ec6097021ef4b6c988effbbd8dcef2bbee12b894",
+    "lab/agent.py": "077030b90cfe2dbbe9f9ff0c3901170e5bc14284c46f63f738cdd62ff5e37f0e",
+    "lab/analyze.py": "a3e27f5db7115bda69393fdca1f759e1befd82fca5061e108f2279bc3a9e4346",
+    "lab/challenge_cases.py": "51fb06579c0aa270d1cc7eb365522cd4e437a807c0be243ffb06f234604f2263",
+    "lab/codex_agent.py": "5707a0232841568edb8e1236cbd57ffccdd9413d2b61b977e3722f8635257ffc",
+    "lab/collector.py": "6d274eb552e7339db097d11f82f6469eefb9a0abea747cf32133f734e1db7ce2",
+    "lab/common.py": "dfd40d29a2c0fadb72b7c55e88d4ffc8afba20276c97920118a7d7ec76a35f18",
+    "lab/evaluate_v2.py": "7b787eca7b8e758b3a0ed0b870884d38a7d6b0a2725aa9ba56de2474092c50b0",
+    "lab/evaluation.py": "34ba5e637d430c0e0d98bc945657f39e42f6357e7a0d4aa00ee4cac24b9935c0",
+    "lab/guards.py": "e5d59b3a0a788e1bc12c8b2ece0681dfd94c5f88c011eafc49539a8db3267509",
+    "lab/policy.py": "35e7b80c05d1b02ae96fbe1fd107a2cdcac49b8c157b2de2efca365f279086e6",
+    "lab/provenance.py": "c67e71126759a98c000aa0cb63ce1b34bc9c2f4b61cd4ba49492b8c1a4010e43",
+    "lab/providers.py": "86e42203805417062791770743307f949bad0c1bbaea93bcbaed79d0352e3d7e",
+    "lab/proxy.py": "57d338928bde8d1d2a3c1a82a02482cb1ad601fad801ebbe6b1dce737e5d636f",
+    "lab/recovery.py": "8ee0fc32db8bea1ebf8608e3795c641739bb12828a56daea746a8e6f00c156ed",
+    "lab/server.py": "aefbcf45dfe9c116cc6d37a7568cdce0ab6e4afa0e6e5f7153b919b776525684",
+    "requirements.lock": "5ae5da3e90f7ab4f595e4988320b173e0cc2cf2df84ac62e4d00985eaedd16b1",
+    "scripts/prepare.py": "26ac0d9dafea4c0098718c5843f186891d86139c9ecccfb7f45f83b456f80a29"
+  },
+  "fixture_sha256": {
+    "A_overview_attack.txt": "494b357a7a4051ffc396d621ae9f81100a10428f6abb117cae3771d85b5bf607",
+    "A_overview_clean.txt": "39cd17325d2c7ede6e9110b291ce646653bd6ee117bb7e8d4e6d2835eb9f66ae",
+    "A_public_report_attack.txt": "776277b009a2d5e475cc4a7b7fa3e3dcdc02c41829031d4482cf70e6f576bea5",
+    "A_public_report_clean.txt": "f8e7af3653250573c36819ff673457e1ed7016f1934cb260f5abc112d0c84d44",
+    "B_confidential.txt": "b29b4fcf2d29566c200a49a17946fb2155772461b701d5cfa239235df21496cb",
+    "evaluation_v2/B_confidential.txt": "0013cffc5a2ee4cdc6b182f87390fa96be607647cc7f79f356f99fbfc41a0a88",
+    "evaluation_v2/authorized_export_A.txt": "0fe89e2df9d52bcd8d056a986df04a3bca114fae5a1a61a874498d954736c9a2",
+    "evaluation_v2/cases.json": "38b2f633c4fc7415cc691e99576a1e06f9125589872c5d621fa3e735cdea0fa5",
+    "evaluation_v2/public_plain_A.txt": "797da2aaa6d3e48c132988a8b60228a0066ee84c6b8e975b6f2ac243c02f5597",
+    "evaluation_v2/public_receipt_A.txt": "6780a9c999846ea4a4b7e724cb2b04323b4416bde583433e9aa3ed6639903f8c",
+    "evaluation_v2/receipt_injection_A.txt": "450c52a1b7f83597b9da6ba0108d422517e31df39fc9da7146c637a20c6c19e6",
+    "evaluation_v2/reviewer_injection_A.txt": "c4eb56d16a151c59b5fdb52ee9a2db319918a1f8f05c5d407acfaa552230a647"
+  },
+  "dataset_freeze_sha256": "dbc854f955906d4b80f8ad0e1835fa47a898c16486aad95c98603c4d0d0fdfdf",
+  "judge_prompt_sha256": "aae0513d2db52914934f222e49ac3331908e6bfe0491f7c6dac61f6d0d687e4a",
+  "protocol_markdown_sha256": "646f80f50d5b4c410fe01e12a361bc00a29650e718c46b2aa8732435bc74e47f",
+  "previous_study_estimated_usd": 0.3287418,
+  "total_study_budget_eur": 10,
+  "stopping_rule": "Retire and retain invalid-judge-verdict run without replacement; continue fixed matrix. Stop provider campaign on other technical failures or budget concern."
+}

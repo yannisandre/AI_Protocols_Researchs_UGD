@@ -1,0 +1,14 @@
+{
+  "dataset_id": "prospective-evaluation-v2",
+  "frozen_at_utc": "2026-11-13T17:23:34.105444+00:00",
+  "files_sha256": {
+    "fixtures/evaluation_v2/B_confidential.txt": "0013cffc5a2ee4cdc6b182f87390fa96be607647cc7f79f356f99fbfc41a0a88",
+    "fixtures/evaluation_v2/authorized_export_A.txt": "0fe89e2df9d52bcd8d056a986df04a3bca114fae5a1a61a874498d954736c9a2",
+    "fixtures/evaluation_v2/cases.json": "38b2f633c4fc7415cc691e99576a1e06f9125589872c5d621fa3e735cdea0fa5",
+    "fixtures/evaluation_v2/public_plain_A.txt": "797da2aaa6d3e48c132988a8b60228a0066ee84c6b8e975b6f2ac243c02f5597",
+    "fixtures/evaluation_v2/public_receipt_A.txt": "6780a9c999846ea4a4b7e724cb2b04323b4416bde583433e9aa3ed6639903f8c",
+    "fixtures/evaluation_v2/receipt_injection_A.txt": "450c52a1b7f83597b9da6ba0108d422517e31df39fc9da7146c637a20c6c19e6",
+    "fixtures/evaluation_v2/reviewer_injection_A.txt": "c4eb56d16a151c59b5fdb52ee9a2db319918a1f8f05c5d407acfaa552230a647"
+  },
+  "constraint": "Do not change corpus, thresholds or judge prompt after live evaluation begins; use a new version for changes."
+}

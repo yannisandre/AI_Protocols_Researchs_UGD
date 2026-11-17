@@ -1,0 +1,44 @@
+# Optional local Codex client. No API key or host-wide Codex configuration is mounted.
+services:
+  codex:
+    image: mcp-proxy-s1:0.1.0
+    user: "${LAB_UID:-1000}:${LAB_GID:-1000}"
+    init: true
+    read_only: true
+    cap_drop: [ALL]
+    security_opt: [no-new-privileges:true]
+    pids_limit: 128
+    mem_limit: 640m
+    command: [python, -m, lab.codex_agent]
+    environment:
+      HOME: /codex-home
+      CODEX_HOME: /codex-home
+      CODEX_CA_CERTIFICATE: /certs/ca.pem
+      CODEX_SOURCE_AUTH: /auth-source/auth.json
+      RUST_LOG: error
+    tmpfs:
+      - /tmp:size=33554432
+      - /codex-home:size=67108864,mode=1777
+      - /workspace:size=16777216,mode=1777
+    networks: [frontend, provider-egress]
+    volumes:
+      - type: bind
+        source: "${CODEX_BINARY:?Set CODEX_BINARY using lab.sh codex}"
+        target: /usr/local/bin/codex
+        read_only: true
+        bind: {create_host_path: false}
+      - type: bind
+        source: "${CODEX_AUTH_FILE:?Set CODEX_AUTH_FILE using lab.sh codex}"
+        target: /auth-source/auth.json
+        read_only: true
+        bind: {create_host_path: false}
+      - type: bind
+        source: "${CODEX_CODE_MODE_HOST:?Set CODEX_CODE_MODE_HOST using lab.sh codex}"
+        target: /usr/local/bin/codex-code-mode-host
+        read_only: true
+        bind: {create_host_path: false}
+      - ./.local/ca.pem:/certs/ca.pem:ro
+      - ./.local/agent-secrets:/secrets:ro
+      - ./results:/results
+    depends_on:
+      proxy: {condition: service_healthy}

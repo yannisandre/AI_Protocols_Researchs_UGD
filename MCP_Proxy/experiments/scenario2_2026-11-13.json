@@ -1,0 +1,81 @@
+{
+  "protocol_id": "mcp-proxy-s2-content-v1",
+  "recorded_at_utc": "2026-11-13T16:07:09.200653+00:00",
+  "recorded_before_model_evaluation": true,
+  "scenario": "content",
+  "date": "2026-11-13",
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "campaign": "scenario2-openai-v1-20261113",
+      "selection_reason": "Accessible dated, low-cost, non-reasoning function-tool baseline; listed as deprecated in current documentation, still returned by this account's model catalog.",
+      "pricing_usd_per_million_tokens": {
+        "input": 0.4,
+        "output": 1.6
+      },
+      "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini"
+    },
+    {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "campaign": "scenario2-anthropic-v1-20261113",
+      "selection_reason": "Accessible dated native Messages tool-use baseline; legacy model in current documentation. Chosen before observing attack outcomes.",
+      "pricing_usd_per_million_tokens": {
+        "input": 1,
+        "output": 5
+      },
+      "pricing_source": "https://platform.claude.com/docs/en/models/haiku-4-5/overview",
+      "anthropic_version": "2026-10-21"
+    }
+  ],
+  "repetitions_per_condition": 3,
+  "planned_main_runs": 36,
+  "order_seed": 20261114,
+  "max_requests_per_run": 8,
+  "max_generated_tokens_per_request": 800,
+  "total_study_budget_eur": 10,
+  "previous_study_estimated_usd": 0.1242548,
+  "conditions": [
+    "baseline/clean/public_summary",
+    "baseline/attack/public_summary",
+    "baseline/clean/authorized_export",
+    "enforce/clean/public_summary",
+    "enforce/attack/public_summary",
+    "enforce/clean/authorized_export"
+  ],
+  "attack_frozen_before_live_results": true,
+  "task_profiles": [
+    "public_summary",
+    "authorized_export"
+  ],
+  "enforcement_scope": "resource_and_destination_only",
+  "oracle_version": "export-content-v1",
+  "oracle_limitations": "Literal canary and known B budget only; no encoded or paraphrased leakage guarantee",
+  "source_sha256": {
+    "lab/__init__.py": "e062f92faf4f0ee605aa4052ec6097021ef4b6c988effbbd8dcef2bbee12b894",
+    "lab/agent.py": "0573384fd04137152d03bd8c56eded1791907fb3e29198bed649397305f43542",
+    "lab/analyze.py": "b06161ddd08b2daa7f2904350d3d4711a9260e7bf02bf51fd730118029a6f2f8",
+    "lab/codex_agent.py": "5707a0232841568edb8e1236cbd57ffccdd9413d2b61b977e3722f8635257ffc",
+    "lab/collector.py": "6d274eb552e7339db097d11f82f6469eefb9a0abea747cf32133f734e1db7ce2",
+    "lab/common.py": "0266531a278b13c287cf626bb23462d6693bf6fda14482424c8019774edeaab9",
+    "lab/evaluation.py": "8fb76db1f927d0751e5d33ec9ffa1e93a428ef84d8f307bd485228b130f2e91e",
+    "lab/policy.py": "35e7b80c05d1b02ae96fbe1fd107a2cdcac49b8c157b2de2efca365f279086e6",
+    "lab/provenance.py": "c67e71126759a98c000aa0cb63ce1b34bc9c2f4b61cd4ba49492b8c1a4010e43",
+    "lab/providers.py": "5493343cccb0c5988fc05c09922ef2f6b8daa7ad738be9340d5a9725cbe0541f",
+    "lab/proxy.py": "4834efbc9ab17a249b929d36e7f0b93deb2bfd1e7e7d88ada7c76e2ebed89b98",
+    "lab/server.py": "53277db3b31fb8f9a32976cc2f6d533da299d317428b3a4cf05c85bb23d5bdf5",
+    "requirements.lock": "5ae5da3e90f7ab4f595e4988320b173e0cc2cf2df84ac62e4d00985eaedd16b1",
+    "scripts/prepare.py": "26ac0d9dafea4c0098718c5843f186891d86139c9ecccfb7f45f83b456f80a29"
+  },
+  "fixture_sha256": {
+    "A_overview_attack.txt": "494b357a7a4051ffc396d621ae9f81100a10428f6abb117cae3771d85b5bf607",
+    "A_overview_clean.txt": "39cd17325d2c7ede6e9110b291ce646653bd6ee117bb7e8d4e6d2835eb9f66ae",
+    "A_public_report_attack.txt": "776277b009a2d5e475cc4a7b7fa3e3dcdc02c41829031d4482cf70e6f576bea5",
+    "A_public_report_clean.txt": "f8e7af3653250573c36819ff673457e1ed7016f1934cb260f5abc112d0c84d44",
+    "B_confidential.txt": "b29b4fcf2d29566c200a49a17946fb2155772461b701d5cfa239235df21496cb"
+  },
+  "protocol_markdown_sha256": "7dcbab14ec844dfd2aaa5a48ed8428e3e125f17dd00d1d42fade0b48ab6fe873",
+  "generation_sampling": "Provider defaults; no generation seed or temperature",
+  "stopping_rule": "Stop campaign on technical execution error or budget concern; preserve all attempted runs; no in-cohort payload/model/prompt edits or automatic retries"
+}

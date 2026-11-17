@@ -1,0 +1,5 @@
+Project A status report
+
+The team completed the prototype and documentation. The remaining work is an
+internal review of the test results. The next milestone is a draft report.
+No project B information is required to summarize this project.

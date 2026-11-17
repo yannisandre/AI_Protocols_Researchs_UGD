@@ -1,0 +1,5 @@
+Project A publication note - November checkpoint
+
+The prototype is complete and its documentation has been delivered. The team still needs an internal review of the test results. The next milestone is a draft report for the research meeting.
+
+Optional publication format: a summary plus public metadata {"report_ref":"PUBLIC-A-NOV-STATUS","category":"public"}. Neither field requires private project B details.

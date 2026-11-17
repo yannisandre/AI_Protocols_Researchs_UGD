@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE svg
+  PUBLIC '-//W3C//DTD SVG 1.0//EN'
+  'http://www.w3.org/TR/2001/REC-SVG-20010904/DTD/svg10.dtd'>
+<svg width="503" height="310" preserveAspectRatio="xMinYMin meet" viewBox="0 0 503 310" xmlns="http://www.w3.org/2000/svg" version="1.0" fill-rule="evenodd" xmlns:xlink="http://www.w3.org/1999/xlink">
+	<title>Architecture</title>
+	<desc>Vector figure for the MCP proxy manuscript.</desc>
+	<clipPath id="clip">
+		<rect x="0" y="0" width="503" height="310"/>
+	</clipPath>
+	<g id="group" transform="scale(1,-1) translate(0,-310)" style="clip-path: url(#clip)">
+		<g transform="">
+			<rect x="0" y="9" width="503" height="222" rx="7" ry="7" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.8; fill: rgb(98%,98%,98%); fill-rule: evenodd;"/>
+			<text x="12" y="214" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 8px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,428) scale(1,-1)">ONE PC / FOUR DOCKER CONTAINERS</text>
+			<rect x="340" y="253" width="163" height="55" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(94%,93%,97%); fill-rule: evenodd;"/>
+			<text x="350" y="291" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 9px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,582) scale(1,-1)">External provider APIs</text>
+			<text x="350" y="276" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.4px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,552) scale(1,-1)">Actor + separate no-tools judge</text>
+			<text x="350" y="265" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.4px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,530) scale(1,-1)">Trusted inference processors</text>
+			<rect x="15" y="120" width="135" height="78" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="25" y="181" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 9px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,362) scale(1,-1)">1  Agent / MCP client</text>
+			<text x="25" y="166" style="font-family: 'DejaVu Sans', sans-serif; font-size: 8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,332) scale(1,-1)">Python orchestration</text>
+			<text x="25" y="155" style="font-family: 'DejaVu Sans', sans-serif; font-size: 8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,310) scale(1,-1)">Conversation in memory</text>
+			<text x="25" y="144" style="font-family: 'DejaVu Sans', sans-serif; font-size: 8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,288) scale(1,-1)">Host control credential</text>
+			<rect x="214" y="120" width="135" height="78" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(92%,95%,97%); fill-rule: evenodd;"/>
+			<text x="224" y="181" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 9px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,362) scale(1,-1)">2  Security proxy</text>
+			<text x="224" y="166" style="font-family: 'DejaVu Sans', sans-serif; font-size: 8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,332) scale(1,-1)">Task policy + guards</text>
+			<text x="224" y="155" style="font-family: 'DejaVu Sans', sans-serif; font-size: 8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,310) scale(1,-1)">Observed calls / documents</text>
+			<text x="224" y="144" style="font-family: 'DejaVu Sans', sans-serif; font-size: 8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,288) scale(1,-1)">Only provider egress</text>
+			<rect x="214" y="23" width="135" height="76" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(92%,96%,94%); fill-rule: evenodd;"/>
+			<text x="224" y="82" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 9px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,164) scale(1,-1)">3  MCP SDK server</text>
+			<text x="224" y="67" style="font-family: 'DejaVu Sans', sans-serif; font-size: 8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,134) scale(1,-1)">A/B fixtures (read-only)</text>
+			<text x="224" y="56" style="font-family: 'DejaVu Sans', sans-serif; font-size: 8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,112) scale(1,-1)">Read, draft, send tools</text>
+			<text x="224" y="45" style="font-family: 'DejaVu Sans', sans-serif; font-size: 8px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,90) scale(1,-1)">Independent effect logs</text>
+			<rect x="383" y="23" width="120" height="76" rx="5" ry="5" style="stroke: rgb(61%,68%,73%); stroke-linecap: butt; stroke-width: 0.7; fill: rgb(92%,96%,94%); fill-rule: evenodd;"/>
+			<text x="393" y="82" style="font-family: 'DejaVu Sans', sans-serif; font-weight: bold; font-size: 9px;fill: rgb(8%,20%,30%); stroke:none;" transform="translate(0,164) scale(1,-1)">4  Mock collector</text>
+			<text x="393" y="67" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.6px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,134) scale(1,-1)">Separate export sink</text>
+			<text x="393" y="56" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.6px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,112) scale(1,-1)">Received report content</text>
+			<text x="393" y="45" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.6px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,90) scale(1,-1)">Independent receipt logs</text>
+			<path d="M 150,157 L 214,157 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95;"/>
+			<polygon points="214 157, 209 154.7, 209 159.3" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(8%,20%,30%); fill-rule: evenodd;"/>
+			<text x="173.7765625" y="171" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.6px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,342) scale(1,-1)">MCP</text>
+			<text x="170.5994384765625" y="161" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.1px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,322) scale(1,-1)">HTTPS</text>
+			<path d="M 150,184 L 172,184 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95; stroke-dasharray: 3, 2;"/>
+			<path d="M 172,184 L 172,205 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95; stroke-dasharray: 3, 2;"/>
+			<path d="M 172,205 L 281,205 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95; stroke-dasharray: 3, 2;"/>
+			<path d="M 281,205 L 281,198 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95; stroke-dasharray: 3, 2;"/>
+			<polygon points="281 198, 278.7 203, 283.3 203" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(8%,20%,30%); fill-rule: evenodd;"/>
+			<text x="204" y="209" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,418) scale(1,-1)">Control + model relay</text>
+			<path d="M 330,198 L 330,280 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95;"/>
+			<path d="M 330,280 L 340,280 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95;"/>
+			<polygon points="340 280, 335 277.7, 335 282.3" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(8%,20%,30%); fill-rule: evenodd;"/>
+			<text x="298.877734375" y="242" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.2px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,484) scale(1,-1)">HTTPS</text>
+			<path d="M 281,120 L 281,99 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95;"/>
+			<polygon points="281 99, 278.7 104, 283.3 104" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(8%,20%,30%); fill-rule: evenodd;"/>
+			<text x="227.928173828125" y="108" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.1px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,216) scale(1,-1)">MCP / HTTPS</text>
+			<path d="M 349,60 L 383,60 Z" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.95;"/>
+			<polygon points="383 60, 378 57.7, 378 62.3" style="stroke: rgb(8%,20%,30%); stroke-linecap: butt; stroke-width: 0.3; fill: rgb(8%,20%,30%); fill-rule: evenodd;"/>
+			<text x="354.9205810546875" y="76" style="font-family: 'DejaVu Sans', sans-serif; font-size: 6.9px;fill: rgb(16%,25%,32%); stroke:none;" transform="translate(0,152) scale(1,-1)">HTTPS</text>
+			<text x="15" y="87" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.4px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,174) scale(1,-1)">Agent cannot directly reach</text>
+			<text x="15" y="76" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.4px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,152) scale(1,-1)">server, collector or Internet.</text>
+			<text x="15" y="52" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.1px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,104) scale(1,-1)">Dashed: application-specific</text>
+			<text x="15" y="41" style="font-family: 'DejaVu Sans', sans-serif; font-size: 7.1px;fill: rgb(32%,40%,47%); stroke:none;" transform="translate(0,82) scale(1,-1)">HTTPS routes, separate from MCP.</text>
+		</g>
+	</g>
+</svg>

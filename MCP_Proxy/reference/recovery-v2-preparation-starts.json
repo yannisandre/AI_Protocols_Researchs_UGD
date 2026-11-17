@@ -1,0 +1,16 @@
+[
+  {
+    "run_id": "5b304f778c754115be25788a06c026d8",
+    "case": "public_plain",
+    "guard": "dlp",
+    "started": "2026-11-13T17:29:55.405020+00:00",
+    "actor_requests_observed": 5
+  },
+  {
+    "run_id": "6d84a04ba4db49958993c22461b0c5a6",
+    "case": "authorized_export",
+    "guard": "resource",
+    "started": "2026-11-13T17:30:04.354412+00:00",
+    "actor_requests_observed": 2
+  }
+]

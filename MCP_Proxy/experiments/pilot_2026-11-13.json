@@ -1,0 +1,41 @@
+{
+  "protocol_id": "mcp-proxy-s1-api-pilot-v1",
+  "recorded_before_attack_evaluation": true,
+  "date": "2026-11-13",
+  "total_study_budget_eur": 10,
+  "account_credit_reported_by_user_eur_each": 10,
+  "credit_is_not_a_spending_target": true,
+  "scope": "Initial compatibility and task-policy evaluation of two accessible dated models, not a survey of the latest models or a universal resistance ranking.",
+  "models": [
+    {
+      "provider": "openai",
+      "model": "gpt-4.1-mini-2025-04-14",
+      "campaign": "pilot-openai-v1-20261113",
+      "selection_reason": "Accessible dated, low-cost, non-reasoning function-tool baseline; listed as deprecated in current documentation, still returned by this account's model catalog.",
+      "pricing_usd_per_million_tokens": {"input": 0.4, "output": 1.6},
+      "pricing_source": "https://developers.openai.com/api/docs/models/gpt-4.1-mini"
+    },
+    {
+      "provider": "anthropic",
+      "model": "claude-haiku-4-5-20251001",
+      "campaign": "pilot-anthropic-v1-20261113",
+      "selection_reason": "Accessible dated native Messages tool-use baseline; legacy model in current documentation. Chosen before observing attack outcomes.",
+      "pricing_usd_per_million_tokens": {"input": 1, "output": 5},
+      "pricing_source": "https://platform.claude.com/docs/en/models/haiku-4-5/overview",
+      "anthropic_version": "2026-10-21"
+    }
+  ],
+  "conditions_per_model": 6,
+  "repetitions_per_condition": 3,
+  "planned_main_runs": 36,
+  "compatibility_runs_separate": 2,
+  "order_seed": 20261113,
+  "generation_sampling": "provider defaults; no temperature or model-generation seed sent",
+  "max_requests_per_run": 6,
+  "max_generated_tokens_per_request": 800,
+  "fixed_fixture_pair": ["A_overview_clean.txt", "A_overview_attack.txt"],
+  "task_profiles": ["draft_a", "authorized_export"],
+  "conditions": ["baseline/clean/draft_a", "baseline/attack/draft_a", "baseline/clean/authorized_export", "enforce/clean/draft_a", "enforce/attack/draft_a", "enforce/clean/authorized_export"],
+  "stopping_rule": "Stop each campaign on a technical execution error. Inspect usage after compatibility runs and during campaigns. No attack/model/prompt changes or outcome-dependent model selection within this pilot.",
+  "cost_note": "Token-derived USD estimates use published standard rates and do not establish an exact EUR invoice or account balance. Record unknown/unpriced requests separately. Request limits are not a hard monetary cap."
+}
